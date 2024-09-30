@@ -17,6 +17,22 @@ pipeline {
                         bat 'mvn clean test' // For Windows agents
                     }
                 }
+        stage('Code Coverage') {
+                            steps {
+                                // Generate Jacoco report after the tests have run
+                                bat 'mvn jacoco:report'
+                            }
+                        }
+                        stage('Publish Test Results') {
+                            steps {
+                                junit '**/target/surefire-reports/*.xml'
+                            }
+                        }
+                        stage('Publish Coverage Report') {
+                            steps {
+                                jacoco()
+                            }
+                        }
         stage('Build Docker Image') {
             steps {
                 script {
