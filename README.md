@@ -1,4 +1,5 @@
-Weekly Sports Time Tracker
+#Weekly Sports Time Tracker
+
 Overview
 This is a Java application that allows users to track their weekly sports activities, log the time spent on each activity, and calculate the total time spent on sports for the week. The project demonstrates the integration of version control with GitHub, continuous integration with Jenkins, containerization with Docker, and deployment on a Linux virtual machine.
 
